@@ -331,6 +331,9 @@ static void* execute(void* ptr) {
 
 // main
 //////////////////////////////////////////////////////////////////////////
+
+
+// [[Rcpp::export]]
 int rLancet(string tumor_bam, string normal_bam, string ref_fasta, string reg, string bed_file, int numthreads)
 {
 

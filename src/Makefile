@@ -11,8 +11,8 @@ INCLUDES := -I$(ABS_BAMTOOLS_DIR)/include/ -I$(ABS_HTSLIB_DIR)/ -L$(ABS_BAMTOOLS
 all: bamtools htslib lancet
 
 .PHONY : lancet
-lancet: Lancet.cc align.cc util.hh util.cc sha256.hh sha256.cc FET.hh ErrorCorrector.hh Mer.hh Ref.cc Ref.hh ReadInfo.hh ReadStart.hh Transcript.hh Variant.hh Variant.cc VariantDB.hh VariantDB.cc Edge.cc Edge.hh ContigLink.hh Node.cc Node.hh Path.cc Path.hh ContigLink.cc Graph.cc Graph.hh Microassembler.cc Microassembler.hh
-	$(CXX) $(CXXFLAGS) $(INCLUDES) Lancet.cc Edge.cc Node.cc Graph.cc Microassembler.cc Ref.cc Path.cc ContigLink.cc align.cc util.cc sha256.cc VariantDB.cc Variant.cc -o lancet $(ABS_HTSLIB_DIR)/libhts.a -lz -ldl -lbamtools -lpthread
+lancet: Lancet.cpp align.cpp util.hh util.cpp sha256.hh sha256.cpp FET.hh ErrorCorrector.hh Mer.hh Ref.cpp Ref.hh ReadInfo.hh ReadStart.hh Transcript.hh Variant.hh Variant.cpp VariantDB.hh VariantDB.cpp Edge.cpp Edge.hh ContigLink.hh Node.cpp Node.hh Path.cpp Path.hh ContigLink.cpp Graph.cpp Graph.hh Microassembler.cpp Microassembler.hh
+	$(CXX) $(CXXFLAGS) $(INCLUDES) Lancet.cpp Edge.cpp Node.cpp Graph.cpp Microassembler.cpp Ref.cpp Path.cpp ContigLink.cpp align.cpp util.cpp sha256.cpp VariantDB.cpp Variant.cpp -o lancet.so $(ABS_HTSLIB_DIR)/libhts.a -lz -ldl -lbamtools -lpthread -fPIC -shared
 
 
 .PHONY : bamtools
