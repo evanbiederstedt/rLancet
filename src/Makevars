@@ -6,7 +6,7 @@ ABS_HTSLIB_DIR := $(realpath $(HTSLIB_DIR))
 
 
 CXX_STD=g++
-PKG_CPPFLAGS=-std=c++11 -Wno-deprecated -Wall -O3 -fexceptions -g -Wl,-rpath,$(ABS_BAMTOOLS_DIR)/lib/
+PKG_CXXFLAGS=-std=c++11 -Wno-deprecated -Wall -O3 -fexceptions -g -Wl,-rpath,$(ABS_BAMTOOLS_DIR)/lib/
 PKG_LIBS= -I$(ABS_BAMTOOLS_DIR)/include/ -I$(ABS_HTSLIB_DIR)/ -L$(ABS_BAMTOOLS_DIR)/lib/ -L$(ABS_HTSLIB_DIR)/
 
 
