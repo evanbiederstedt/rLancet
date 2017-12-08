@@ -6,7 +6,7 @@ ABS_HTSLIB_DIR := $(realpath $(HTSLIB_DIR))
 
 
 CXX_STD=g++
-PKG_CXXFLAGS=-std=c++11 -Wno-deprecated -Wall -O3 -fexceptions -g -Wl,-rpath,$(ABS_BAMTOOLS_DIR)/lib/
+PKG_CXXFLAGS=-std=c++11 -Wno-deprecated -Wall -O3 -fexceptions -g -Wl -fPIC -shared,-rpath,$(ABS_BAMTOOLS_DIR)/lib/
 PKG_LIBS= -I$(ABS_BAMTOOLS_DIR)/include/ -I$(ABS_HTSLIB_DIR)/ -L$(ABS_BAMTOOLS_DIR)/lib/ -L$(ABS_HTSLIB_DIR)/
 
 
@@ -14,7 +14,7 @@ all: bamtools htslib RLancet
 
 .PHONY : RLancet
 RLancet: Lancet.cpp align.cpp util.hh util.cpp sha256.hh sha256.cpp FET.hh ErrorCorrector.hh Mer.hh Ref.cpp Ref.hh ReadInfo.hh ReadStart.hh Transcript.hh Variant.hh Variant.cpp VariantDB.hh VariantDB.cpp Edge.cpp Edge.hh ContigLink.hh Node.cpp Node.hh Path.cpp Path.hh ContigLink.cpp Graph.cpp Graph.hh Microassembler.cpp Microassembler.hh
-	$(CXX_STD) $(PKG_CXXFLAGS) $(PKG_LIBS) Lancet.cpp Edge.cpp Node.cpp Graph.cpp Microassembler.cpp Ref.cpp Path.cpp ContigLink.cpp align.cpp util.cpp sha256.cpp VariantDB.cpp Variant.cpp -o RLancet.so $(ABS_HTSLIB_DIR)/libhts.a -lz -ldl -lbamtools -lpthread -fPIC -shared
+	$(CXX_STD) $(PKG_CXXFLAGS) $(PKG_LIBS) Lancet.cpp Edge.cpp Node.cpp Graph.cpp Microassembler.cpp Ref.cpp Path.cpp ContigLink.cpp align.cpp util.cpp sha256.cpp VariantDB.cpp Variant.cpp -o RLancet.so $(ABS_HTSLIB_DIR)/libhts.a -lz -ldl -lbamtools -lpthread
 
 
 .PHONY : bamtools
