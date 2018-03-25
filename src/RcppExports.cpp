@@ -16,11 +16,8 @@ BEGIN_RCPP
 END_RCPP
 }
 
-RcppExport SEXP _RLancet_rLancet(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
-
 static const R_CallMethodDef CallEntries[] = {
     {"_RLancet_rcpp_hello_world", (DL_FUNC) &_RLancet_rcpp_hello_world, 0},
-    {"_RLancet_rLancet",          (DL_FUNC) &_RLancet_rLancet,          6},
     {NULL, NULL, 0}
 };
 

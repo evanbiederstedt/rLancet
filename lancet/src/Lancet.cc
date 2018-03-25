@@ -363,8 +363,7 @@ static void* execute(void* ptr) {
 //lancet_function(tumor, normal, ref, reg, numthreads)
 
 
-// main
-//////////////////////////////////////////////////////////////////////////
+// [[Rcpp::export]]
 int rLancet(string tumor_bam, string normal_bam, string ref_fasta, string reg, string bed_file, int numthreads)
 {
 

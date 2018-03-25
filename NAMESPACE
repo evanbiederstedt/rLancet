@@ -1,5 +1,4 @@
-useDynLib(RLancet)
-export(rLancet) 
+useDynLib(RLancet) 
 exportPattern("^[[:alpha:]]+")
 importFrom(Rcpp, evalCpp)
 
