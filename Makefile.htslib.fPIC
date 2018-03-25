@@ -1,4 +1,4 @@
-HTSLIB_DIR := ./lancet/htslib-1.3/
+HTSLIB_DIR := ./src/htslib-1.3/
 
 ABS_HTSLIB_DIR := $(realpath $(HTSLIB_DIR))
 

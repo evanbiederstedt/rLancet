@@ -1,4 +1,4 @@
-BAMTOOLS_DIR := ./lancet/bamtools-2.3.0/
+BAMTOOLS_DIR := ./src/bamtools-2.3.0/
 
 
 ABS_BAMTOOLS_DIR := $(realpath $(BAMTOOLS_DIR))
