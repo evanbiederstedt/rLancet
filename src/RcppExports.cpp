@@ -5,22 +5,6 @@
 
 using namespace Rcpp;
 
-// rLancet
-int rLancet(string tumor_bam, string normal_bam, string ref_fasta, string reg, string bed_file, int numthreads);
-RcppExport SEXP _RLancet_rLancet(SEXP tumor_bamSEXP, SEXP normal_bamSEXP, SEXP ref_fastaSEXP, SEXP regSEXP, SEXP bed_fileSEXP, SEXP numthreadsSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< string >::type tumor_bam(tumor_bamSEXP);
-    Rcpp::traits::input_parameter< string >::type normal_bam(normal_bamSEXP);
-    Rcpp::traits::input_parameter< string >::type ref_fasta(ref_fastaSEXP);
-    Rcpp::traits::input_parameter< string >::type reg(regSEXP);
-    Rcpp::traits::input_parameter< string >::type bed_file(bed_fileSEXP);
-    Rcpp::traits::input_parameter< int >::type numthreads(numthreadsSEXP);
-    rcpp_result_gen = Rcpp::wrap(rLancet(tumor_bam, normal_bam, ref_fasta, reg, bed_file, numthreads));
-    return rcpp_result_gen;
-END_RCPP
-}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP _RLancet_rcpp_hello_world() {
@@ -32,9 +16,11 @@ BEGIN_RCPP
 END_RCPP
 }
 
+RcppExport SEXP _RLancet_rLancet(SEXP, SEXP, SEXP, SEXP, SEXP, SEXP);
+
 static const R_CallMethodDef CallEntries[] = {
-    {"_RLancet_rLancet", (DL_FUNC) &_RLancet_rLancet, 6},
     {"_RLancet_rcpp_hello_world", (DL_FUNC) &_RLancet_rcpp_hello_world, 0},
+    {"_RLancet_rLancet",          (DL_FUNC) &_RLancet_rLancet,          6},
     {NULL, NULL, 0}
 };
 

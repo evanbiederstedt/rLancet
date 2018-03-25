@@ -1,0 +1,17 @@
+HTSLIB_DIR := ./lancet/htslib-1.3/
+
+ABS_HTSLIB_DIR := $(realpath $(HTSLIB_DIR))
+
+CXX := g++
+CXXFLAGS := -fPIC -Wno-deprecated -Wall -O3 -fexceptions -g -Wl,-rpath,$(ABS_BAMTOOLS_DIR)/lib/
+INCLUDES := -I$(ABS_BAMTOOLS_DIR)/include/ -L$(ABS_BAMTOOLS_DIR)/lib/
+
+all: htslib 
+	
+.PHONY : htslib
+htslib:
+	cd $(ABS_HTSLIB_DIR); ./configure; make; cd ../
+
+#.PHONY : clean
+clean:
+	cd $(ABS_HTSLIB_DIR); make clean;

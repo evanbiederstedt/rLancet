@@ -5,6 +5,7 @@ rLancet <- function(tumor_bam, normal_bam, ref_fasta, reg, bed_file, numthreads)
     .Call('_RLancet_rLancet', PACKAGE = 'RLancet', tumor_bam, normal_bam, ref_fasta, reg, bed_file, numthreads)
 }
 
+
 rcpp_hello_world <- function() {
     .Call('_RLancet_rcpp_hello_world', PACKAGE = 'RLancet')
 }
